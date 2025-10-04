@@ -1,14 +1,14 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import {Row, Col} from 'react-bootstrap';
 import Product from '../components/Product';
-import {useState, useEffect} from 'react';
-import axios from 'axios';
 
 const HomeScreen = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]); // <-- Fix: empty array
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const {data} = axios.get('/api/products');
+      const { data } = await axios.get('/api/products');
       setProducts(data);
     };
     fetchProducts();
