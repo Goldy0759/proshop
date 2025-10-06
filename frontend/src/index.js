@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
+import CartScreen from "./screens/CartScreen";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />} errorElement={<ErrorPage />}>
       <Route index={true} path="/" element={<HomeScreen />} />
       <Route path="/product/:id" element={<ProductScreen />} />
+      <Route path="/cart" element={<CartScreen />} />
     </Route>
   )
 );
